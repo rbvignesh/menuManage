@@ -45,6 +45,7 @@ liquibase {
             url 'jdbc:mysql://localhost:3306/menumanagement?createDatabaseIfNotExist=true'
             username 'root'
             password 'root'
+            logLevel 'debug'
         }
     }
 }    
