@@ -35,6 +35,7 @@ dependencies {
 	runtime('com.h2database:h2')
 	runtime('mysql:mysql-connector-java:5.1.13')
 	runtime('javax.inject:javax.inject:1')
+	runtime('org.apache.tomcat.embed:tomcat-embed-jasper')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
