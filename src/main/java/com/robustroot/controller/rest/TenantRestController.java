@@ -16,6 +16,7 @@ public class TenantRestController {
 	
 	@RequestMapping("/fetchAllTenants")
 	public List<TenantDTO> fetchAllTenants(){
+		System.out.println("Rest called...........");
 		return tenantService.fetchAllTenants();
 	}
 

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TenantManagementController {
 
 	
-	@RequestMapping("/te")
-	public String tenantManagement(Map<String, Object> model) {
+	@RequestMapping("/tenantManagement")
+	public String home(Map<String, Object> model) {
 		System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-		return "welcome";
+		return "tenantManagement";
 	}
 
 }
