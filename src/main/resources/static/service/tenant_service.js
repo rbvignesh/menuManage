@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('menuMan').factory('TenantService', ['$http', '$q', function($http, $q){
+angular.module('menuManApp').factory('TenantService', ['$http', '$q', function($http, $q){
 
-    var REST_SERVICE_URI = 'http://localhost:8080/';
+    var REST_SERVICE_URI = 'http://localhost:8080/fetchAllTenants';
 
     var factory = {
         fetchAllTenants: fetchAllTenants
@@ -11,6 +11,7 @@ angular.module('menuMan').factory('TenantService', ['$http', '$q', function($htt
     return factory;
 
     function fetchAllTenants() {
+    	console.log("in fetchAllTenants Service!");
         var deferred = $q.defer();
         $http.get(REST_SERVICE_URI)
             .then(
