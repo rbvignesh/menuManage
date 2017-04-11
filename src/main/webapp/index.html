@@ -1,73 +1,35 @@
-<html ng-app="menuManApp">
-<head>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
 <title>MenuMan</title>
-<style>
-.username.ng-valid {
-	background-color: lightgreen;
-}
 
-.username.ng-dirty.ng-invalid-required {
-	background-color: red;
-}
-
-.username.ng-dirty.ng-invalid-minlength {
-	background-color: yellow;
-}
-
-.email.ng-valid {
-	background-color: lightgreen;
-}
-
-.email.ng-dirty.ng-invalid-required {
-	background-color: red;
-}
-
-.email.ng-dirty.ng-invalid-email {
-	background-color: yellow;
-}
-</style>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 </head>
 <body>
-	<div class="generic-container" ng-controller="TenantController as ctrl">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading">
-				<span class="lead">List of Tenants</span>
-			</div>
-			<div class="tablecontainer">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Display Name</th>
-							<th>Email</th>
-							<th>Telephone Number</th>
-							<th width="20%"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="t in ctrl.tenants track by $index">
-							<td><span ng-bind="t.name"></span></td>
-							<td><span ng-bind="t.displayName"></span></td>
-							<td><span ng-bind="t.email"></span></td>
-							<td><span ng-bind="t.telNumber"></span></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+
+	<div ng-app = "menuman">
+		<div ng-view></div>
 	</div>
 
-	
-
+	<!-- Java Script
+   ================================================== -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-		
-	<script type="text/javascript" src="/static/js/app.js"></script>
-		
-	<script type="text/javascript" src="/static/js/controller/tenant_controller.js"></script>
-	<script type="text/javascript" src="/static/js/service/tenant_service.js"></script>
+	<script 
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+	
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/js/jquery-1.10.2.min.js"><\/script>')</script>
+	<script type="text/javascript"
+		src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+
+	<script src="assets/js/jquery.flexslider.js"></script>
+	<script src="assets/js/doubletaptogo.js"></script>
+	<script src="assets/js/init.js"></script>
+<script src="static/js/app.js"></script>
+<script src="views/home/home.js"></script>
+	
 </body>
+
 </html>

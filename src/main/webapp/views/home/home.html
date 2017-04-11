@@ -1,0 +1,221 @@
+<!DOCTYPE>
+<html ng-app>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+<!--- Basic Page Needs
+   ================================================== -->
+<meta charset="utf-8">
+<title>Sparrow - Free Responsive HTML5/CSS3 Template</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+   ================================================== -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+    ================================================== -->
+<link rel="stylesheet" href="assets/css/default.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/media-queries.css">
+
+<!-- Script
+   ================================================== -->
+<script src="assets/js/modernizr.js"></script>
+
+<!-- Favicons
+	================================================== -->
+<link rel="shortcut icon" href="favicon.ico">
+<style>
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+	<!-- Header
+   ================================================== -->
+	<header>
+
+		<div class="row">
+
+			<div class="eight columns">
+
+				<div class="logo">
+					<a href="index.html"><img alt="" src="assets/images/logo.png"></a>
+				</div>
+
+				<nav id="nav-wrap">
+
+					<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show
+						navigation</a> <a class="mobile-btn" href="#" title="Hide navigation">Hide
+						navigation</a>
+
+					<ul id="nav" class="nav">
+
+						<li class="current"><a href="index.htm">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="styles.html">Features</a></li>
+
+					</ul>
+					<!-- end #nav -->
+
+				</nav>
+				<!-- end #nav-wrap -->
+
+			</div>
+
+		</div>
+
+	</header>
+	<!-- Header End -->
+
+	<!-- Intro Section
+   ================================================== -->
+	<section id="intro">
+
+		<!-- Flexslider Start-->
+		<div id="intro-slider" class="flexslider">
+
+			<ul class="slides">
+
+				<!-- Slide -->
+				<li>
+					<div class="row">
+						<div class="twelve columns">
+							<div class="slider-text">
+								<h1>MenuMan</h1>
+								<p>The Next Gen dining experience</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<!-- Slide -->
+				<li>
+					<div class="row">
+						<div class="twelve columns">
+							<div class="slider-text">
+								<h1>
+									Want to reduce customer wait time<span>?</span>
+								</h1>
+								<p>We have just the right solution for you. Login to know
+									more</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+
+		</div>
+		<!-- Flexslider End-->
+
+	</section>
+	<!-- Intro Section End-->
+
+
+	<div id="login-form" class="content-outer center">
+		<h2> Login </h2>
+		<!-- form -->
+		<form name="loginform" id="loginform" ng-submit="onSubmit()">
+			<fieldset>
+
+				<div class="half">
+					<label for="username">User Name <span class="required">*</span></label>
+					<input name="username" type="text" ng-model = "username" id="username" size="20"
+						value="" />
+				</div>
+
+				<div class="half">
+					<label for="password">Password <span class="required">*</span></label>
+					<input name="password" type="password" id="password" ng-model = "password" size="15"
+						value="" />
+				</div>
+
+				<div>
+					<button type="submit">Submit</button>
+					
+				</div>
+
+			</fieldset>
+		</form>
+		<!-- Form End -->
+
+		<!-- contact-warning -->
+		<div id="message-warning"></div>
+		<!-- contact-success -->
+		<div id="message-success">
+			<i class="icon-ok"></i>Your message was sent, thank you!<br />
+		</div>
+
+	</div>
+
+	</section>
+	<!-- section end -->
+
+	</div>
+
+
+
+
+	<!-- footer
+   ================================================== -->
+	<footer>
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<ul class="footer-nav">
+					<li><a href="#">Home.</a></li>
+					<li><a href="#">About.</a></li>
+					<li><a href="#">Contact.</a></li>
+					<li><a href="#">Features.</a></li>
+				</ul>
+
+				<ul class="copyright">
+					<li>Template Copyright &copy; 2014 Sparrow</li>
+					<li>Design by <a href="http://www.styleshout.com/">Styleshout</a></li>
+				</ul>
+
+			</div>
+
+			<div id="go-top" style="display: block;">
+				<a title="Back to Top" href="#">Go To Top</a>
+			</div>
+
+		</div>
+
+	</footer>
+	<!-- Footer End-->
+
+	<!-- Java Script
+   ================================================== -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="assets/js/jquery-1.10.2.min.js"><\/script>')</script>
+	<script type="text/javascript"
+		src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+
+	<script src="assets/js/jquery.flexslider.js"></script>
+	<script src="assets/js/doubletaptogo.js"></script>
+	<script src="assets/js/init.js"></script>
+
+</body>
+
+</html>
