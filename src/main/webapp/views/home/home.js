@@ -11,9 +11,16 @@ angular.module('menuman.home', ['ngRoute'])
 
 .controller("homeCtrl", ["$scope","$http","$location",'loginService',function($scope, $http,$location,loginService) {
 	console.log("controller tied");
+	$scope.usermodel={
+			  username:'',
+			  password:''
+			}
     $scope.onSubmit = function() {
        console.log("controller called!!!");
-       loginService.login()
+       
+       
+       console.log("controller called!!!"+$scope.usermodel.username+":"+$scope.usermodel.password);
+       loginService.login($scope.usermodel.username,$scope.usermodel.password)
        .then(
        function(d) {
        	console.log("Service call successful!");
@@ -39,10 +46,10 @@ angular.module('menuman').factory('loginService', ['$http', '$q', function($http
 
     return factory;
 
-    function login() {
+    function login(uname,pwd) {
     	console.log("in login!");
        var deferred = $q.defer();
-        $http.get(REST_SERVICE_URI+"?userName=Ramesh&passWord=123")
+        $http.get(REST_SERVICE_URI+"?userName="+uname+"&passWord="+pwd)
             .then(
             function (response) {
             	console.log("response from server :"+response.data.userName);
