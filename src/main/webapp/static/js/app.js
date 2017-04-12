@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('menuman', [
   'ngRoute',
-  'menuman.home'
+  'menuman.home','menuman.dashboard'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
 	console.log("in 1");
