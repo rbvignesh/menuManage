@@ -4,30 +4,34 @@
 <!--<![endif]-->
 <head>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="assets/styles.css">
 </head>
 
 <body>
-
-
-	<div ng-include="'views/header/header.html'"></div>
+<div ng-include="'views/header/header.html'"></div>
 	<div class="container">
 		<div class="wrapper">
-			<form name="loginform" id="loginform" ng-submit="onSubmit()" class="form-signin">
+			<div class="row">
+				<div class="span4"></div>
+				<div class="span4">
+					<img class="center-block" src="assets/images/logo.png" />
+				</div>
+				<div class="span4"></div>
+			</div>
+			<form name="loginform" id="loginform" ng-submit="onSubmit()"
+				class="form-signin">
 				<h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
 				<hr class="colorgraph">
 				<br> <input type="text" class="form-control" name="username"
-					 placeholder="UserName" ng-model = "usermodel.username" id="username" /> <input
-					type="password" class="form-control" name="password"
-					placeholder="Password" id="password" ng-model = "usermodel.password" />
+					placeholder="UserName" ng-model="usermodel.username" id="username" />
+				<input type="password" class="form-control" name="password"
+					placeholder="Password" id="password" ng-model="usermodel.password" />
 
 				<button class="btn btn-lg btn-primary btn-block" name="Submit"
 					value="Login" type="Submit">Login</button>
-					<a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+				<a href="javascript:;" class="forget" data-toggle="modal"
+					data-target=".forget-modal">Forgot your password?</a>
 			</form>
 		</div>
 	</div>
