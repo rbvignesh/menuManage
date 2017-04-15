@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html ng-app>
+
+<!--<![endif]-->
+<head>
+
+<link rel="stylesheet" type="text/css"
+	href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/styles.css">
+</head>
+
+<body>
+
+
+	<div ng-include="'views/header/header.html'"></div>
+	<div class="panel panel-default">
+		<div class="container">
+			<h1>Listing Eaample with smart-table and AngularJS</h1>
+			<div ng-show="loading">
+				<h3>Loading...</h3>
+			</div>
+			<table st-table="rowCollection" class="table table-striped">
+				<thead>
+					<tr>
+						<th>first name</th>
+						<th>last name</th>
+						<th>birth date</th>
+						<th>balance</th>
+						<th>email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="row in rowCollection">
+						<td>{{row.firstName}}</td>
+						<td>{{row.lastName}}</td>
+						<td>{{row.birthDate}}</td>
+						<td>{{row.balance}}</td>
+						<td>{{row.email}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<div ng-include="'views/footer/footer.html'"></div>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-smart-table/2.1.8/smart-table.min.js"></script>
+</body>
+
+</html>
