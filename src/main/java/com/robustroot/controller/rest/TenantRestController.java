@@ -19,8 +19,7 @@ public class TenantRestController {
 	@RequestMapping("/fetchAllTenants")
 	public List<TenantDTO> fetchAllTenants(){
 		System.out.println("Rest called...........");
-		//return tenantService.fetchAll();
-		return null;
+		return tenantService.fetchAll();
 	}
 
 	@RequestMapping(value="/createTenant",method = RequestMethod.POST, consumes = "application/json")
