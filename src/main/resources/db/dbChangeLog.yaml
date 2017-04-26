@@ -506,3 +506,399 @@ databaseChangeLog:
         indexName: idx_order_id
         tableName: order
         unique: false  
+    #Table for Order Detail
+    - createTable:
+        tableName: order_detail
+        columns:
+        - column:
+            name: order_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_order_id_order_detail
+              references: order(order_id)
+              nullable: false
+        - column:
+            name: item_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_item_id_order_detail
+              references: menu_item(item_id)
+              nullable: false
+        - column:
+            name: quantity
+            type: int
+            constraints:
+              nullable: false
+        - column:
+            name: status
+            #Possible Values : P- Pending, A- Assigned, R- Ready
+            type: varchar(2)
+            constraints:
+              nullable: false
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false
+    #Table for Role 
+    - createTable:
+        tableName: role
+        columns:
+        - column:
+            name: role_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: name
+            type: varchar(10)
+            constraints:
+              uniqueKey: true
+              nullable: false
+        - column:
+            name: description
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false
+    #Table for User Role
+    - createTable:
+        tableName: user_role
+        columns:
+        - column:
+            name: tenant_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_tenant_id_user_role
+              references: tenant(tenant_id)
+              nullable: false
+        - column:
+            name: branch_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_branch_id_user_role
+              references: branch(branch_id)
+              nullable: false
+        - column:
+            name: role_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_role_id_user_role
+              references: role(role_id)
+              nullable: false
+        - column:
+            name: user_id
+            type: bigint
+        - column:
+            name: name
+            type: varchar(20)
+        - column:
+            name: password
+            type: longtext
+            constraints:
+              nullable: false
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false            
+    #Table for Customer Bill
+    - createTable:
+        tableName: customer_bill
+        columns:
+        - column:
+            name: tenant_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_tenant_id_customer_bill
+              references: tenant(tenant_id)
+              nullable: false
+        - column:
+            name: branch_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_branch_id_customer_bill
+              references: branch(branch_id)
+              nullable: false
+        - column:
+            name: order_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_order_id_customer_bill
+              references: order(order_id)
+              nullable: false
+        - column:
+            name: customer_id
+            type: bigint
+            constraints:
+              foreignKeyName: fk_customer_id_customer_bill
+              references: customer(customer_id)
+              nullable: false
+        - column:
+            name: total_bill_amount
+            type: numeric(9,2)
+            constraints:
+              nullable: false
+        - column:
+            name: discount_percentage
+            type: numeric(9,2)
+        - column:
+            name: tip_amount
+            type: numeric(9,2)
+        - column:
+            name: net_bill_amount
+            type: numeric(9,2)
+            constraints:
+              nullable: false
+        - column:
+            name: paid_flag
+            #Possible Values : C- Completed,P- Pending
+            type: varchar(1)
+            constraints:
+              nullable: false
+        - column:
+            name: payment_mode
+            #Possible Values: CC- Credit Card, NB- Net Banking, DC- Debit Card, WA- Wallet, PC-Paid in counter
+            type: varchar(2)
+            constraints:
+              nullable: false
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false
+    #Table for Tenant Billing Summary
+    - createTable:
+        tableName: tenant_billing_summary
+        columns:
+        - column:
+            name: tenant_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_tenant_id_tenant_billing_summary
+              references: tenant(tenant_id)
+              nullable: false
+        - column:
+            name: branch_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_branch_id_tenant_billing_summary
+              references: branch(branch_id)
+              nullable: false
+        - column:
+            name: bill_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: date
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: amount
+            type: numeric(9,2)
+            constraints:
+              nullable: false
+        - column:
+            name: due_date
+            type: datetime
+        - column:
+            name: status
+            type: varchar(1)
+            #Possible values: G- Generated, S- Sent to Customer,P- Paid
+        - column:
+            name: payment_mode
+            type: varchar(1)
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false
+    #Table for Device Usage
+    - createTable:
+        tableName: device_usage
+        columns:
+        - column:
+            name: tenant_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_tenant_id_device_usage
+              references: tenant(tenant_id)
+              nullable: false
+        - column:
+            name: branch_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_branch_id_device_usage
+              references: branch(branch_id)
+              nullable: false
+        - column:
+            name: device_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_device_id_device_usage
+              references: device(device_id)
+              nullable: false
+        - column:
+            name: order_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              foreignKeyName: fk_order_id_device_usage
+              references: order(order_id)
+              nullable: false
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false
+    #Table for Billing Model
+    - createTable:
+        tableName: billing_model
+        columns:
+        - column:
+            name: billing_model_id
+            type: bigint
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: billing_model_name
+            type: varchar(250)
+            constraints:
+              nullable: false
+        - column:
+            name: billing_amount
+            type: numeric(9,2)
+            constraints:
+              nullable: false
+        - column:
+            name: created_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: created_on
+            type: timestamp
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_by
+            type: varchar(20)
+            constraints:
+              nullable: false
+        - column:
+            name: last_updated_on
+            type: timestamp
+            constraints:
+              nullable: false
