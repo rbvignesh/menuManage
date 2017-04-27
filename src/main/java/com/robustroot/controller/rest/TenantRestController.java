@@ -25,8 +25,7 @@ public class TenantRestController {
 	@RequestMapping(value="/createTenant",method = RequestMethod.POST, consumes = "application/json")
 	public Long createTenant(@RequestBody final TenantDTO newTenantdto){
 		System.out.println("Rest called...........");
-		//return tenantService.create(newTenantdto);
-		return null;
+		return tenantService.create(newTenantdto);
 	}
 
 }

@@ -16,7 +16,7 @@ public class TenantServiceImpl implements TenantService {
 	@Autowired
 	TenantRepository tenantRepository;
 
-	//@Override
+	@Override
 	public Long create(TenantDTO tenantDTO) {
 		Tenant tenant = Tenant.builder().name(tenantDTO.getName()).billingAddress(tenantDTO.getBillingAddress()).email(tenantDTO.getEmail())
 				.telNumber(tenantDTO.getTelNumber()).logoImageId(tenantDTO.getLogoImageId()).status(tenantDTO.getStatus())
@@ -26,7 +26,7 @@ public class TenantServiceImpl implements TenantService {
 		return tenant.getTenantId();
 	}
 
-	//@Override
+	@Override
 	public List<TenantDTO> fetchAll() {
 		List<TenantDTO> tenantDTOList = null;
 		List<Tenant> tenantEntityList = tenantRepository.findAll();
@@ -42,19 +42,19 @@ public class TenantServiceImpl implements TenantService {
 		return tenantDTOList;
 	}
 
-	//@Override
+	@Override
 	public TenantDTO fetch(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	//@Override
+	@Override
 	public Long update(TenantDTO dto) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	//@Override
+	@Override
 	public Long delete(TenantDTO dto) {
 		// TODO Auto-generated method stub
 		return null;
