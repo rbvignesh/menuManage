@@ -9,7 +9,7 @@ import lombok.Data;
 @Builder
 public class DeviceDTO {
 	Long deviceId;
-	Long branchId;
+	//Long branchId;
 	Long tenantId;
 	Timestamp commissionedDate;
 	Timestamp retiredDate;
@@ -17,12 +17,10 @@ public class DeviceDTO {
 	Timestamp createdOn;
 	String lastUpdatedBy;
 	Timestamp lastUpdatedOn;
-	
-	public DeviceDTO(Long deviceId, Long branchId, Long tenantId, Timestamp commissionedDate, Timestamp retiredDate,
-			String createdBy, Timestamp createdOn, String lastUpdatedBy, Timestamp lastUpdatedOn) {
+	public DeviceDTO(Long deviceId, Long tenantId, Timestamp commissionedDate, Timestamp retiredDate, String createdBy,
+			Timestamp createdOn, String lastUpdatedBy, Timestamp lastUpdatedOn) {
 		super();
 		this.deviceId = deviceId;
-		this.branchId = branchId;
 		this.tenantId = tenantId;
 		this.commissionedDate = commissionedDate;
 		this.retiredDate = retiredDate;
@@ -31,5 +29,7 @@ public class DeviceDTO {
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
+	
+	
 
 }

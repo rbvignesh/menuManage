@@ -32,6 +32,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')	
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+	compile('org.modelmapper:modelmapper:1.1.0')
+	
 	runtime('com.h2database:h2')
 	runtime('mysql:mysql-connector-java:5.1.13')
 	compileOnly('org.projectlombok:lombok')

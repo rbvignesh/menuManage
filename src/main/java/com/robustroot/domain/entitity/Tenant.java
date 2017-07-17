@@ -43,6 +43,8 @@ public class Tenant {
 	
 	@SuppressWarnings("unused")
 	public Tenant(){}
+	
+	public Tenant(Long tenantId){this.tenantId = tenantId;}
 
 	public Tenant(Long tenantId, String name, String displayName, String billingAddress, String email, String telNumber,
 			String mobileNumber, Long logoImageId, String status, String createdBy, Timestamp createdOn,
