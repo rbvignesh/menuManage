@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <tenant tenant_id="1" name="Test Inc" display_name="TInc" billing_address="Chennai" email="test@test.com" tel_number="4444444" mobile_number="5555555" logo_image_id="1" status="A" created_by="vignesh" created_on="2017-07-19 10:07:55.0" last_updated_by="vignesh" last_updated_on="2017-07-19 10:07:55.0"/>
+  <branch tenant_id="1" branch_id="1" branch_name="Kodambakkam" admin_name="kumar" address="kodambakkam" email="k@test.com" tel_number="8888888" mobile_number="2222222" created_by="vignesh" created_on="2017-07-19 10:10:52.0" last_updated_by="vignesh" last_updated_on="2017-07-19 10:10:52.0"/>
+  <device device_id="1" branch_id="1" tenant_id="1" commissioned_date="2017-07-19 00:00:00.0" billing_model_id="1" created_by="vignesh" created_on="2017-07-19 10:14:45.0" last_updated_by="vignesh" last_updated_on="2017-07-19 10:14:45.0"/>
+</dataset>

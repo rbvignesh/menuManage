@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <tenant tenant_id="1" name="Test Inc" display_name="TInc" billing_address="Chennai" email="test@test.com" tel_number="4444444" mobile_number="5555555" logo_image_id="1" status="A" created_by="vignesh" created_on="2017-07-19 10:07:55.0" last_updated_by="vignesh" last_updated_on="2017-07-19 10:07:55.0"/>
+</dataset>
